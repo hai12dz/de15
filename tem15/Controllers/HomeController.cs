@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 using tem15.Models;
@@ -30,11 +31,45 @@ namespace tem15.Controllers
 
 
         }
-
-        public IActionResult Privacy()
+        [HttpGet]
+        [Route("TaoMoiTranDau")]
+        public IActionResult TaoMoiTranDau()
         {
+
+
+            ViewBag.Clbnha = new SelectList(db.Caulacbos.ToList(), "CauLacBoId", "TenClb");
+                ViewBag.Clbkhach= new SelectList(db.Caulacbos.ToList(), "CauLacBoId", "TenClb");
+            ViewBag.SanVanDongId = new SelectList(db.Sanvandongs.ToList(), "SanVanDongId", "TenSan");
+
+
             return View();
         }
+
+
+
+        [HttpPost]
+        [Route("TaoMoiTranDau")]
+        public IActionResult TaoMoiTranDau(Trandau trandau)
+        {
+            db.Trandaus.Add(trandau);
+            db.SaveChanges();
+
+            ViewBag.Clbnha = new SelectList(db.Caulacbos.ToList(), "CauLacBoId", "TenClb");
+            ViewBag.Clbkhach = new SelectList(db.Caulacbos.ToList(), "CauLacBoId", "TenClb");
+            ViewBag.SanVanDongId = new SelectList(db.Sanvandongs.ToList(), "SanVanDongId", "TenSan");
+
+
+            return View();
+        }
+
+
+
+
+
+
+
+
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

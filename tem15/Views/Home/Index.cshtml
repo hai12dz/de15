@@ -16,7 +16,6 @@
     @foreach (var item in Model)
     {
 
-
         var getUrl = "https://localhost:7183/api/trandauapi/" + @item.HoVaTen;
         <li> <a class="btn-primary btn" onclick="showTranDauTheoTenCauThu('@getUrl')">@item.HoVaTen</a></li>
 
@@ -34,7 +33,11 @@
 
 
 
-@section DanhSachTranDau {
+@section DanhSachTranDau { 
+
+
+    <a asp-controller="Home" asp-action="TaoMoiTranDau" class="btn btn-warning">Thêm trận đấu</a>
+
 
 
     <h2 class="title position-relative text-dark text-uppercase mx-xl-5 mb-4">

@@ -259,3 +259,4 @@ E:\zalo\ltweb\Kiemtra\tem15\tem15\obj\Debug\net8.0\refint\tem15.dll
 E:\zalo\ltweb\Kiemtra\tem15\tem15\obj\Debug\net8.0\tem15.pdb
 E:\zalo\ltweb\Kiemtra\tem15\tem15\obj\Debug\net8.0\tem15.genruntimeconfig.cache
 E:\zalo\ltweb\Kiemtra\tem15\tem15\obj\Debug\net8.0\ref\tem15.dll
+E:\zalo\ltweb\Kiemtra\tem15\tem15\obj\Debug\net8.0\tem15.sourcelink.json
