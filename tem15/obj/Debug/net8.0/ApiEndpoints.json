@@ -1,0 +1,28 @@
+[
+  {
+    "ContainingType": "tem15.Controllers.TranDauAPIController",
+    "Method": "GetCauThuTheoMa",
+    "RelativePath": "api/TranDauAPI/{tencauthu}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tencauthu",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[tem15.Models.TranDauModels.TranDauTheoTenCauThu, tem15, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  }
+]

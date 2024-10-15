@@ -1,0 +1,696 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi Shop</title>
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../assets/fonts/fontawesome-free-5.15.3-web/css/all.min.css">
+    <!-- Bootstrap -->
+    <link href="../assets/bootstrap-5.0.2-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Animate -->
+    <link rel="stylesheet" href="../assets/css/animate.min.css" />
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="../assets/css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="../assets/css/owl.theme.default.min.css" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/index.css">
+</head>
+<body>
+
+    <partial name="Header" />
+
+
+    <!-- Header bottom -->
+    <div class="header__bottom container-fluid bg-dark mb-30">
+        <div class="row px-xl-5">
+            <div class="col-3 position-relative d-none d-lg-block">
+                <a class="navbar-category-wrap btn d-flex justify-content-between align-items-center bg-primary"
+                   data-bs-toggle="collapse" data-bs-target="#collapseNavbar" aria-expanded="false" aria-controls="collapseNavbar">
+                    <h6>
+                        <i class="fas fa-bars me-2"></i>
+                        Danh mục
+                    </h6>
+                    <i class="fas fa-angle-down"></i>
+                </a>
+                <nav class="navbar-category navbar-light bg-light position-absolute collapse" id="collapseNavbar">
+                    <div class="navbar-nav w-100">
+                        <div class="nav-item dropend">
+                            <a href="#" class="dropend-toggle nav-link d-flex align-items-center justify-content-between w-100" data-bs-toggle="dropdown" aria-expanded="false">
+                                Áo
+                                <i class="fas fa-angle-right"></i>
+                            </a>
+                            <div class="dropdown-menu rounded-0 border-0">
+                                <a class="dropdown-item" href="#">Áo sơ mi</a>
+                                <a class="dropdown-item" href="#">Áo polo</a>
+                                <a class="dropdown-item" href="#">Áo thun</a>
+                                <a class="dropdown-item" href="#">Áo ba lỗ</a>
+                            </div>
+                        </div>
+                        <div class="nav-item dropend">
+                            <a href="#" class="nav-link d-flex align-items-center justify-content-between w-100" data-bs-toggle="dropdown" aria-expanded="false">
+                                Quần
+                                <i class="fas fa-angle-right"></i>
+                            </a>
+                            <div class="dropdown-menu rounded-0 border-0">
+                                <a class="dropdown-item" href="#">Quần âu</a>
+                                <a class="dropdown-item" href="#">Quần bò</a>
+                                <a class="dropdown-item" href="#">Quần đùi</a>
+                            </div>
+                        </div>
+                        <a href="#" class="nav-item nav-link">Phụ kiện</a>
+                    </div>
+                </nav>
+            </div>
+            <div class="col-lg-9">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3 py-lg-0 h-100">
+                    <a href="#" class="logo d-md-block d-lg-none">
+                        <span class="h1 text-uppercase text-dark bg-light px-2">Multi</span>
+                        <span class="h1 text-uppercase text-light bg-primary px-2">Shop</span>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-list collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                        @RenderBody()
+
+
+                        <div class="navbar-action navbar-nav d-none d-lg-flex">
+                            <a href="#" class="navbar-action__item me-3 d-flex align-items-center">
+                                <i class="fas fa-heart text-primary me-1"></i>
+                                <span class="navbar-action-item__quantity text-light border border-secondary rounded-circle d-block">0</span>
+                            </a>
+                            <a href="#" class="navbar-action__item d-flex align-items-center">
+                                <i class="fas fa-shopping-cart text-primary me-1"></i>
+                                <span class="navbar-action-item__quantity text-light border border-secondary rounded-circle d-block">0</span>
+                            </a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <!-- Banner -->
+    <div class="container-fluid">
+        <div class="row px-xl-5">
+            <div class="col-xl-8">
+                <div id="carouselIndicators" class="carousel slide carousel-fade mb-30 mb-xl-0" data-ride="carousel">
+                    <div class="carousel-indicators">
+                        <a role="button" data-bs-target="#carouselIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></a>
+                        <a role="button" data-bs-target="#carouselIndicators" data-bs-slide-to="1" aria-label="Slide 2"></a>
+                        <a role="button" data-bs-target="#carouselIndicators" data-bs-slide-to="2" aria-label="Slide 3"></a>
+                    </div>
+                    <div class="banner-left carousel-inner">
+                        <div class="banner-left-item carousel-item active">
+                            <img class="banner-left-item__img d-block w-100 h-100" src="../assets/img/banner-left-1.jpg" alt="First slide">
+                            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                                <div class="banner-left-content">
+                                    <h1 class="display-4 mb-3 animate__animated animate__fadeInDown">Men Fashion</h1>
+                                    <p class="mx-md-5 px-5 animate__animated animate__bounceIn">Lorem rebum magna amet lorem magna erat diam stet. Sadips duo stet amet amet ndiam elitr ipsum diam</p>
+                                    <a href="#" class="btn btn-outline-light rounded-0 py-2 px-4 mt-3 animate__animated animate__fadeInUp">Shop Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="banner-left-item carousel-item">
+                            <img class="banner-left-item__img w-100 h-100" src="../assets/img/banner-left-2.jpg" alt="Second slide">
+                            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                                <div class="banner-left-content">
+                                    <h1 class="display-4 mb-3 animate__animated animate__fadeInDown">Women Fashion</h1>
+                                    <p class="mx-md-5 px-5 animate__animated animate__bounceIn">Lorem rebum magna amet lorem magna erat diam stet. Sadips duo stet amet amet ndiam elitr ipsum diam</p>
+                                    <a href="#" class="btn btn-outline-light rounded-0 py-2 px-4 mt-3 animate__animated animate__fadeInUp">Shop Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="banner-left-item carousel-item">
+                            <img class="banner-left-item__img w-100 h-100" src="../assets/img/banner-left-3.jpg" alt="Third slide">
+                            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                                <div class="banner-left-content">
+                                    <h1 class="display-4 mb-3 animate__animated animate__fadeInDown">Kids Fashion</h1>
+                                    <p class="mx-md-5 px-5 animate__animated animate__bounceIn">Lorem rebum magna amet lorem magna erat diam stet. Sadips duo stet amet amet ndiam elitr ipsum diam</p>
+                                    <a href="#" class="btn btn-outline-light rounded-0 py-2 px-4 mt-3 animate__animated animate__fadeInUp">Shop Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4">
+                <div class="product-offer mb-30">
+                    <img class="img-fluid" src="../assets/img/banner-right-1.jpg" alt="">
+                    <div class="offer-text">
+                        <h6 class="text-white text-uppercase">Save 20%</h6>
+                        <h3 class="text-white mb-3">Special Offer</h3>
+                        <a href="#" class="btn btn-primary shadow-none rounded-0">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-offer mb-30">
+                    <img class="img-fluid" src="../assets/img/banner-right-2.jpg" alt="">
+                    <div class="offer-text">
+                        <h6 class="text-white text-uppercase">Save 20%</h6>
+                        <h3 class="text-white mb-3">Special Offer</h3>
+                        <a href="#" class="btn btn-primary shadow-none rounded-0">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid pt-5">
+        <div class="row px-xl-5 pb-3">
+            <div class="col-lg-3 col-md-6 col-12 service">
+                <div class="service__item bg-light">
+                    <h1 class="fa fa-check text-primary"></h1>
+                    <h5>Quality Product</h5>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-12 service">
+                <div class="service__item bg-light">
+                    <h1 class="fa fa-shipping-fast text-primary"></h1>
+                    <h5>Free Shipping</h5>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-12 service">
+                <div class="service__item bg-light">
+                    <h1 class="fas fa-exchange-alt text-primary"></h1>
+                    <h5>14-Day Return</h5>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-12 service">
+                <div class="service__item bg-light">
+                    <h1 class="fa fa-phone-volume text-primary"></h1>
+                    <h5>24/7 Support</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Categories -->
+   
+  
+    <div id="displayTranDaus" class="container-fluid pt-5">
+
+        @RenderSection("DanhSachTranDau",true)
+
+    </div>
+
+
+    <!-- Featured products -->
+    <div class="container-fluid pt-5 pb-3">
+        <h2 class="title position-relative text-dark text-uppercase mx-xl-5 mb-4">
+            <span class="bg-secondary pe-3">Featured products</span>
+        </h2>
+        <div class="row px-xl-5">
+            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+                <div class="product-item bg-light mb-4">
+                    <div class="product-img">
+                        <img class="w-100" src="../assets/img/product-1.jpg">
+                        <div class="product-action">
+                            <a class="btn btn-outline-dark btn-square rounded-0" href="#"><i class="fa fa-shopping-cart"></i></a>
+                            <a class="btn btn-outline-dark btn-square rounded-0" href="#"><i class="far fa-heart"></i></a>
+                        </div>
+                    </div>
+                    <div class="text-center py-4 product-info">
+                        <a class="product-info__name" href="#">Product Name Goes Here</a>
+                        <div class="d-flex align-items-center justify-content-center mt-2">
+                            <h5>$123.00</h5>
+                            <h6 class="text-muted ms-2 text-decoration-line-through">$123.00</h6>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-center mb-1">
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small>(99)</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+                <div class="product-item bg-light mb-4">
+                    <div class="product-img">
+                        <img class="w-100" src="../assets/img/product-1.jpg">
+                        <div class="product-action">
+                            <a class="btn btn-outline-dark btn-square rounded-0" href="#"><i class="fa fa-shopping-cart"></i></a>
+                            <a class="btn btn-outline-dark btn-square rounded-0" href="#"><i class="far fa-heart"></i></a>
+                        </div>
+                    </div>
+                    <div class="text-center py-4 product-info">
+                        <a class="product-info__name" href="#">Product Name Goes Here</a>
+                        <div class="d-flex align-items-center justify-content-center mt-2">
+                            <h5>$123.00</h5>
+                            <h6 class="text-muted ms-2 text-decoration-line-through">$123.00</h6>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-center mb-1">
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small>(99)</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+                <div class="product-item bg-light mb-4">
+                    <div class="product-img">
+                        <img class="w-100" src="../assets/img/product-1.jpg">
+                        <div class="product-action">
+                            <a class="btn btn-outline-dark btn-square rounded-0" href="#"><i class="fa fa-shopping-cart"></i></a>
+                            <a class="btn btn-outline-dark btn-square rounded-0" href="#"><i class="far fa-heart"></i></a>
+                        </div>
+                    </div>
+                    <div class="text-center py-4 product-info">
+                        <a class="product-info__name" href="#">Product Name Goes Here</a>
+                        <div class="d-flex align-items-center justify-content-center mt-2">
+                            <h5>$123.00</h5>
+                            <h6 class="text-muted ms-2 text-decoration-line-through">$123.00</h6>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-center mb-1">
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small>(99)</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+                <div class="product-item bg-light mb-4">
+                    <div class="product-img">
+                        <img class="w-100" src="../assets/img/product-1.jpg">
+                        <div class="product-action">
+                            <a class="btn btn-outline-dark btn-square rounded-0" href="#"><i class="fa fa-shopping-cart"></i></a>
+                            <a class="btn btn-outline-dark btn-square rounded-0" href="#"><i class="far fa-heart"></i></a>
+                        </div>
+                    </div>
+                    <div class="text-center py-4 product-info">
+                        <a class="product-info__name" href="#">Product Name Goes Here</a>
+                        <div class="d-flex align-items-center justify-content-center mt-2">
+                            <h5>$123.00</h5>
+                            <h6 class="text-muted ms-2 text-decoration-line-through">$123.00</h6>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-center mb-1">
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small>(99)</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+                <div class="product-item bg-light mb-4">
+                    <div class="product-img">
+                        <img class="w-100" src="../assets/img/product-1.jpg">
+                        <div class="product-action">
+                            <a class="btn btn-outline-dark btn-square rounded-0" href="#"><i class="fa fa-shopping-cart"></i></a>
+                            <a class="btn btn-outline-dark btn-square rounded-0" href="#"><i class="far fa-heart"></i></a>
+                        </div>
+                    </div>
+                    <div class="text-center py-4 product-info">
+                        <a class="product-info__name" href="#">Product Name Goes Here</a>
+                        <div class="d-flex align-items-center justify-content-center mt-2">
+                            <h5>$123.00</h5>
+                            <h6 class="text-muted ms-2 text-decoration-line-through">$123.00</h6>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-center mb-1">
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small>(99)</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+                <div class="product-item bg-light mb-4">
+                    <div class="product-img">
+                        <img class="w-100" src="../assets/img/product-1.jpg">
+                        <div class="product-action">
+                            <a class="btn btn-outline-dark btn-square rounded-0" href="#"><i class="fa fa-shopping-cart"></i></a>
+                            <a class="btn btn-outline-dark btn-square rounded-0" href="#"><i class="far fa-heart"></i></a>
+                        </div>
+                    </div>
+                    <div class="text-center py-4 product-info">
+                        <a class="product-info__name" href="#">Product Name Goes Here</a>
+                        <div class="d-flex align-items-center justify-content-center mt-2">
+                            <h5>$123.00</h5>
+                            <h6 class="text-muted ms-2 text-decoration-line-through">$123.00</h6>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-center mb-1">
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small>(99)</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+                <div class="product-item bg-light mb-4">
+                    <div class="product-img">
+                        <img class="w-100" src="../assets/img/product-1.jpg">
+                        <div class="product-action">
+                            <a class="btn btn-outline-dark btn-square rounded-0" href="#"><i class="fa fa-shopping-cart"></i></a>
+                            <a class="btn btn-outline-dark btn-square rounded-0" href="#"><i class="far fa-heart"></i></a>
+                        </div>
+                    </div>
+                    <div class="text-center py-4 product-info">
+                        <a class="product-info__name" href="#">Product Name Goes Here</a>
+                        <div class="d-flex align-items-center justify-content-center mt-2">
+                            <h5>$123.00</h5>
+                            <h6 class="text-muted ms-2 text-decoration-line-through">$123.00</h6>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-center mb-1">
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small>(99)</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+                <div class="product-item bg-light mb-4">
+                    <div class="product-img">
+                        <img class="w-100" src="../assets/img/product-1.jpg">
+                        <div class="product-action">
+                            <a class="btn btn-outline-dark btn-square rounded-0" href="#"><i class="fa fa-shopping-cart"></i></a>
+                            <a class="btn btn-outline-dark btn-square rounded-0" href="#"><i class="far fa-heart"></i></a>
+                        </div>
+                    </div>
+                    <div class="text-center py-4 product-info">
+                        <a class="product-info__name" href="#">Product Name Goes Here</a>
+                        <div class="d-flex align-items-center justify-content-center mt-2">
+                            <h5>$123.00</h5>
+                            <h6 class="text-muted ms-2 text-decoration-line-through">$123.00</h6>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-center mb-1">
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small>(99)</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Big banner -->
+    <div class="container-fluid pt-5 pb-3">
+        <div class="row px-xl-5">
+            <div class="col-md-6">
+                <div class="big-banner-item mb-30">
+                    <img src="../assets/img/banner-right-1.jpg" alt="">
+                    <div class="big-banner-item__content">
+                        <h6 class="text-white text-uppercase">Save 20%</h6>
+                        <h3 class="text-white mb-3">Special Offer</h3>
+                        <a href="" class="btn btn-primary rounded-0 shadow-none">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="big-banner-item mb-30">
+                    <img src="../assets/img/banner-right-2.jpg" alt="">
+                    <div class="big-banner-item__content">
+                        <h6 class="text-white text-uppercase">Save 20%</h6>
+                        <h3 class="text-white mb-3">Special Offer</h3>
+                        <a href="" class="btn btn-primary rounded-0 shadow-none">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Recent products -->
+    <div class="container-fluid pt-5 pb-3">
+        <h2 class="title position-relative text-dark text-uppercase mx-xl-5 mb-4">
+            <span class="bg-secondary pe-3">Recent products</span>
+        </h2>
+        <div class="row px-xl-5">
+            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+                <div class="product-item bg-light mb-4">
+                    <div class="product-img">
+                        <img class="w-100" src="../assets/img/product-1.jpg">
+                        <div class="product-action">
+                            <a class="btn btn-outline-dark btn-square rounded-0" href="#"><i class="fa fa-shopping-cart"></i></a>
+                            <a class="btn btn-outline-dark btn-square rounded-0" href="#"><i class="far fa-heart"></i></a>
+                        </div>
+                    </div>
+                    <div class="text-center py-4 product-info">
+                        <a class="product-info__name" href="#">Product Name Goes Here</a>
+                        <div class="d-flex align-items-center justify-content-center mt-2">
+                            <h5>$123.00</h5>
+                            <h6 class="text-muted ms-2 text-decoration-line-through">$123.00</h6>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-center mb-1">
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small>(99)</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+                <div class="product-item bg-light mb-4">
+                    <div class="product-img">
+                        <img class="w-100" src="../assets/img/product-1.jpg">
+                        <div class="product-action">
+                            <a class="btn btn-outline-dark btn-square rounded-0" href="#"><i class="fa fa-shopping-cart"></i></a>
+                            <a class="btn btn-outline-dark btn-square rounded-0" href="#"><i class="far fa-heart"></i></a>
+                        </div>
+                    </div>
+                    <div class="text-center py-4 product-info">
+                        <a class="product-info__name" href="#">Product Name Goes Here</a>
+                        <div class="d-flex align-items-center justify-content-center mt-2">
+                            <h5>$123.00</h5>
+                            <h6 class="text-muted ms-2 text-decoration-line-through">$123.00</h6>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-center mb-1">
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small>(99)</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+                <div class="product-item bg-light mb-4">
+                    <div class="product-img">
+                        <img class="w-100" src="../assets/img/product-1.jpg">
+                        <div class="product-action">
+                            <a class="btn btn-outline-dark btn-square rounded-0" href="#"><i class="fa fa-shopping-cart"></i></a>
+                            <a class="btn btn-outline-dark btn-square rounded-0" href="#"><i class="far fa-heart"></i></a>
+                        </div>
+                    </div>
+                    <div class="text-center py-4 product-info">
+                        <a class="product-info__name" href="#">Product Name Goes Here</a>
+                        <div class="d-flex align-items-center justify-content-center mt-2">
+                            <h5>$123.00</h5>
+                            <h6 class="text-muted ms-2 text-decoration-line-through">$123.00</h6>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-center mb-1">
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small>(99)</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+                <div class="product-item bg-light mb-4">
+                    <div class="product-img">
+                        <img class="w-100" src="../assets/img/product-1.jpg">
+                        <div class="product-action">
+                            <a class="btn btn-outline-dark btn-square rounded-0" href="#"><i class="fa fa-shopping-cart"></i></a>
+                            <a class="btn btn-outline-dark btn-square rounded-0" href="#"><i class="far fa-heart"></i></a>
+                        </div>
+                    </div>
+                    <div class="text-center py-4 product-info">
+                        <a class="product-info__name" href="#">Product Name Goes Here</a>
+                        <div class="d-flex align-items-center justify-content-center mt-2">
+                            <h5>$123.00</h5>
+                            <h6 class="text-muted ms-2 text-decoration-line-through">$123.00</h6>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-center mb-1">
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small>(99)</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+                <div class="product-item bg-light mb-4">
+                    <div class="product-img">
+                        <img class="w-100" src="../assets/img/product-1.jpg">
+                        <div class="product-action">
+                            <a class="btn btn-outline-dark btn-square rounded-0" href="#"><i class="fa fa-shopping-cart"></i></a>
+                            <a class="btn btn-outline-dark btn-square rounded-0" href="#"><i class="far fa-heart"></i></a>
+                        </div>
+                    </div>
+                    <div class="text-center py-4 product-info">
+                        <a class="product-info__name" href="#">Product Name Goes Here</a>
+                        <div class="d-flex align-items-center justify-content-center mt-2">
+                            <h5>$123.00</h5>
+                            <h6 class="text-muted ms-2 text-decoration-line-through">$123.00</h6>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-center mb-1">
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small>(99)</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+                <div class="product-item bg-light mb-4">
+                    <div class="product-img">
+                        <img class="w-100" src="../assets/img/product-1.jpg">
+                        <div class="product-action">
+                            <a class="btn btn-outline-dark btn-square rounded-0" href="#"><i class="fa fa-shopping-cart"></i></a>
+                            <a class="btn btn-outline-dark btn-square rounded-0" href="#"><i class="far fa-heart"></i></a>
+                        </div>
+                    </div>
+                    <div class="text-center py-4 product-info">
+                        <a class="product-info__name" href="#">Product Name Goes Here</a>
+                        <div class="d-flex align-items-center justify-content-center mt-2">
+                            <h5>$123.00</h5>
+                            <h6 class="text-muted ms-2 text-decoration-line-through">$123.00</h6>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-center mb-1">
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small>(99)</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+                <div class="product-item bg-light mb-4">
+                    <div class="product-img">
+                        <img class="w-100" src="../assets/img/product-1.jpg">
+                        <div class="product-action">
+                            <a class="btn btn-outline-dark btn-square rounded-0" href="#"><i class="fa fa-shopping-cart"></i></a>
+                            <a class="btn btn-outline-dark btn-square rounded-0" href="#"><i class="far fa-heart"></i></a>
+                        </div>
+                    </div>
+                    <div class="text-center py-4 product-info">
+                        <a class="product-info__name" href="#">Product Name Goes Here</a>
+                        <div class="d-flex align-items-center justify-content-center mt-2">
+                            <h5>$123.00</h5>
+                            <h6 class="text-muted ms-2 text-decoration-line-through">$123.00</h6>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-center mb-1">
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small>(99)</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+                <div class="product-item bg-light mb-4">
+                    <div class="product-img">
+                        <img class="w-100" src="../assets/img/product-1.jpg">
+                        <div class="product-action">
+                            <a class="btn btn-outline-dark btn-square rounded-0" href="#"><i class="fa fa-shopping-cart"></i></a>
+                            <a class="btn btn-outline-dark btn-square rounded-0" href="#"><i class="far fa-heart"></i></a>
+                        </div>
+                    </div>
+                    <div class="text-center py-4 product-info">
+                        <a class="product-info__name" href="#">Product Name Goes Here</a>
+                        <div class="d-flex align-items-center justify-content-center mt-2">
+                            <h5>$123.00</h5>
+                            <h6 class="text-muted ms-2 text-decoration-line-through">$123.00</h6>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-center mb-1">
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small class="fa fa-star text-primary me-1"></small>
+                            <small>(99)</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Trademark -->
+    <div class="container-fluid py-5">
+        <div class="row px-xl-5">
+            <div class="col">
+                <div class="owl-carousel">
+                    <div class="trademark-item bg-light p-4"><img src="../assets/img/trademark-1.jpg" alt=""></div>
+                    <div class="trademark-item bg-light p-4"><img src="../assets/img/trademark-2.jpg" alt=""></div>
+                    <div class="trademark-item bg-light p-4"><img src="../assets/img/trademark-3.jpg" alt=""></div>
+                    <div class="trademark-item bg-light p-4"><img src="../assets/img/trademark-4.jpg" alt=""></div>
+                    <div class="trademark-item bg-light p-4"><img src="../assets/img/trademark-5.jpg" alt=""></div>
+                    <div class="trademark-item bg-light p-4"><img src="../assets/img/trademark-6.jpg" alt=""></div>
+                    <div class="trademark-item bg-light p-4"><img src="../assets/img/trademark-7.jpg" alt=""></div>
+                    <div class="trademark-item bg-light p-4"><img src="../assets/img/trademark-8.jpg" alt=""></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <partial name="Footer" />
+
+    <!-- Bootstrap -->
+
+    <script src="../assets/bootstrap-5.1.3-dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Jquery -->
+    <script src="../assets/js/jquery-3.6.0.min.js"></script>
+    <!-- Owl Carousel -->
+    <script src="../assets/js/owl.carousel.min.js"></script>
+    <!-- Script -->
+    <script src="../assets/js/index.js"></script>
+</body>
+</html>

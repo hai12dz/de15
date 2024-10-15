@@ -1,0 +1,162 @@
+﻿@model List<Cauthu>
+
+
+
+@{
+    ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_LayoutKiemTra.cshtml";
+
+}
+
+
+
+
+<div class="navbar-nav">
+
+    @foreach (var item in Model)
+    {
+
+
+        var getUrl = "https://localhost:7183/api/trandauapi/" + @item.HoVaTen;
+        <li> <a class="btn-primary btn" onclick="showTranDauTheoTenCauThu('@getUrl')">@item.HoVaTen</a></li>
+
+
+
+    }
+
+</div>
+
+
+
+
+
+
+
+
+
+@section DanhSachTranDau {
+
+
+    <h2 class="title position-relative text-dark text-uppercase mx-xl-5 mb-4">
+        <span class="bg-secondary pe-3">Categories</span>
+    </h2>
+
+
+
+    <div class="row px-xl-5 pb-3">
+        @foreach (var item in ViewBag.DanhSachTranDau)
+        {
+            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+
+                <a href="#">
+                    <div class="category-item mb-4">
+
+                        <div class="category-item__img">
+
+                            <img class="img-fluid" src="@Url.Content("../images/" + item.Anh)" alt="" />
+
+                        </div>
+
+                        <div class="category-item__info">
+                            <h6>@item.TranDauId</h6>
+                        </div>
+
+
+                    </div>
+                </a>
+
+
+            </div>
+        }
+
+    </div>
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+<script>
+    function showTranDauTheoTenCauThu(getUrl) {
+        console.log('Fetching from URL:', getUrl); // Kiểm tra URL
+        $.ajax({
+            url: getUrl,
+            method: 'GET',
+            success: function (data) {
+                console.log('Data received:', data); // Kiểm tra dữ liệu
+                if (!data) {
+                    throw new Error('Data is null or undefined');
+                }
+                let str = '';
+                if (Array.isArray(data) && data.length > 0) {
+                    data.forEach(val => {
+                        str += '<div class="row px-xl-5 pb-3">';
+                        str += '<div class="col-lg-3 col-md-4 col-sm-6 pb-1">';
+
+                        str += '<a href="#">';
+                        str += '<div class="category-item mb-4">';
+
+                        str += '<div class="category-item__img">';
+
+                        str += '<img src="../images/' + (val.anh ? val.anh : 'default-image.jpg') + '" alt="" />';
+
+                        str += '</div >';
+
+                        str += '<div class="category-item__info">';
+                        str += '<h6>'+val.tranDauId+'</h6>';
+                        str += '</div >';
+
+
+                        str += '</div >';
+                        str += '</a >';
+
+
+                        str += '</div>';
+
+                        str += '</div >';
+
+
+
+
+
+
+
+
+
+
+
+                    });
+                } else {
+                    str = '<p>No data available.</p>';
+                }
+                document.getElementById('displayTranDaus').innerHTML = str;
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                alert('Error: ' + textStatus + ' - ' + errorThrown);
+            }
+        });
+    }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
